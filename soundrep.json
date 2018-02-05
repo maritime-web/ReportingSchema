@@ -1,0 +1,447 @@
+{
+  "timestampUTC": "13:34:17-2018/01/24",
+  "version": "1.06",
+  "report": {
+    "SendReportEndpoints": [
+      {
+        "format": "JSON",
+        "endpoint": "https://endpointURL",
+        "method": "POST",
+        "encoding": "UTF8"
+      },
+      {
+        "format": "XML",
+        "endpoint": "report@soundvts.org",
+        "method": "EMAIL",
+        "encoding": "UTF8"
+      }
+    ],
+    "reportingRequirements": {
+      "receiptEmail": true,
+      "vesselMMSINumber": true,
+      "vesselIMONumber": true,
+      "vesselCallsign": true,
+      "vesselName": true,
+      "vesselNumberOfPeopleOnBoard": true,
+      "vesselEtaAtReportingArea": true,
+      "vesselExpectedCourseOverGroundEnteringArea": true,
+      "vesselAisType": true,
+      "vesselLength": false,
+      "vesselDeadWeightTonnage": true,
+      "vesselCargoType": true,
+      "vesselGrossTonnage": false,
+      "vesselTotalFuelTonnage": false,
+      "vesselReportingRequirements": {
+        "fuelName": true,
+        "sulpherPercentage": false,
+        "sulphurContentDenomination": true,
+        "quantity": true
+      },
+      "vesselCargoInformation": [
+        {
+          "IMOClass": true,
+          "quantity": true,
+          "note": false
+        }
+      ],
+      "vesselDraught": true,
+      "vesselAirDraught": true,
+      "PollutionOrDangerousCargoLostOverboard": true,
+      "portOfDestination": true,
+      "intendedRoute": true
+    },
+    "reportingArea": {
+      "reportingCenterInformation": {
+        "shortname": "SOUNDREP",
+        "name": "Mandatory Ship Reporting System in the Sound between Denmark and Sweden",
+        "country": "Denmark and Sweden",
+        "callsign": "Sound Traffic",
+        "email": "contact@soundvts.org",
+        "telephone": [
+          "+46 771 63 06 00"
+        ],
+        "fax": "",
+        "radio": {
+          "UHF": {
+            "channels": [],
+            "reservechannels": []
+          },
+          "VHF": {
+            "channels": [
+              "North 73",
+              "South 71"
+            ],
+            "reservechannels": [
+              "UPDATE THIS"
+            ]
+          }
+        },
+        "areaWKT": "POLYGON((10.8544921875 56.00020483338158,10.634765625 55.78612990561606,10.639572143554688 55.59377045090436,10.8544921875 56.00020483338158)) - should probably be part of the service instance, but here a higher resolution of the actual VTS/SRS area can be defined.",
+        "externalData": {
+          "iconImage": "img/vts_logos/forsvaret_logo.jpg",
+          "VTSGuideLink": "http://forsvaret.dk/VTSSTB/eng/Documents/BELTREP%20Information%20ver%200.pdf"
+        }
+      },
+      "reportingAreaLimitations": {
+        "onlyFlagstateVesselsAllowed": false,
+        "notAllowedFuelTypes": [
+          {
+            "name": "HFO",
+            "sulphurDenomination": ""
+          },
+          {
+            "name": "Nuclear",
+            "sulphurDenomination": ""
+          }
+        ],
+        "notAllowedAisVesselTypes": [
+          71,
+          72,
+          80
+        ],
+        "draughtMax": 20,
+        "airDraughtMax": 65,
+        "lengthMax": 420,
+        "speedMax": 12,
+        "speedMin": 3,
+        "grossTonnageMax": 10000,
+        "deadWeightTonnageMax": 2000
+      },
+      "pilotRoutes": [
+        {
+          "routeName": "west-of-ven",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.5
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.5
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        }
+      ]
+    },
+    "reportingData": {
+      "vesselAisTypes": [
+        {
+          "aisIdentifierRange": [
+            99
+          ],
+          "aisDescription": "Other",
+          "aisDetailedTypeName": "Please specify"
+        },
+        {
+          "aisIdentifierRange": [
+            30
+          ],
+          "aisDescription": "Fishing",
+          "aisDetailedTypeName": "Fishing Vessel"
+        },
+        {
+          "aisIdentifierRange": [
+            31,
+            32
+          ],
+          "aisDescription": "Tug",
+          "aisDetailedTypeName": "Towing Vessel"
+        },
+        {
+          "aisIdentifierRange": [
+            33
+          ],
+          "aisDescription": "Dredger",
+          "aisDetailedTypeName": "Dredging Vessel"
+        },
+        {
+          "aisIdentifierRange": [
+            36
+          ],
+          "aisDescription": "Sailboat",
+          "aisDetailedTypeName": "Sailing Vessel"
+        },
+        {
+          "aisIdentifierRange": [
+            37
+          ],
+          "aisDescription": "Pleasure Craft",
+          "aisDetailedTypeName": ""
+        },
+        {
+          "aisIdentifierRange": [
+            70,
+            79
+          ],
+          "aisDescription": "Cargo",
+          "aisDetailedTypeName": "Cargo Vessel"
+        },
+        {
+          "aisIdentifierRange": [
+            60
+          ],
+          "aisDescription": "Passenger",
+          "aisDetailedTypeName": "Passenger Ship"
+        },
+        {
+          "aisIdentifierRange": [
+            80,
+            89
+          ],
+          "aisDescription": "Tanker",
+          "aisDetailedTypeName": "Tanker Transport Vessel"
+        }
+      ],
+      "IMODangerousCargoTypes": [
+        [
+          {
+            "IMOClass": 1,
+            "IMOSubClass": 1.1,
+            "name": "Explosives",
+            "description": "Mass explosion hazard.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 1,
+            "IMOSubClass": 1.2,
+            "name": "Explosives",
+            "description": "Projection explosion hazard.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 1,
+            "IMOSubClass": 1.3,
+            "name": "Explosives",
+            "description": "Fire and explosion hazard but not mass explosion hazard.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 1,
+            "IMOSubClass": 1.4,
+            "name": "Explosives",
+            "description": "Fire and minor explosion hazard but not mass explosion hazard.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 1,
+            "IMOSubClass": 1.5,
+            "name": "Explosives",
+            "description": "Insensitive explosives, has fire and minor explosion hazard with little probability of mass explosion.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 1,
+            "IMOSubClass": 1.6,
+            "name": "Explosives",
+            "description": "Very insensitive explosives, has fire and minor explosion hazard with little very probability of explosion or mass explosion.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          }
+        ],
+        [
+          {
+            "IMOClass": 2,
+            "IMOSubClass": 2.1,
+            "name": "Flammable Gas",
+            "description": "Gaseous at 20C or below, can ignite under pressure or by fire, with air from 13 percent or below. ",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 2,
+            "IMOSubClass": 2.2,
+            "name": "Non-flammable, Non-poisonus Gas",
+            "description": "A non-flammable and nonpoisonous compressed gas, under pressure. Not Oxygen.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 2,
+            "IMOSubClass": 2.2,
+            "name": "Oxygen Gas",
+            "description": "Liquid or compressed Oxygen gas.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 2,
+            "IMOSubClass": 2.3,
+            "name": "Poison Gas",
+            "description": "Toxic to humans or assumed toxic. Gaseous state below 20C under pressure.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          }
+        ],
+        [
+          {
+            "IMOClass": 3,
+            "IMOSubClass": 3,
+            "name": "Flammable Liquid",
+            "description": "Any flammable liquid meeting specification 49CFR 173.115, or ASTM 4206 incl. app. H, or ISO 2592.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          }
+        ],
+        [
+          {
+            "IMOClass": 4,
+            "IMOSubClass": 4.1,
+            "name": "Flammable Solids or Substances",
+            "description": "Desensitized explosives, self-reacting materials which can burn with or without oxygen, or readily combustible materials.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 4,
+            "IMOSubClass": 4.2,
+            "name": "Flammable Solids",
+            "description": "Spontaneously Combustible material, liquid or solid, which can selfignite in contact with in under 5 minutes.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 4,
+            "IMOSubClass": 4.3,
+            "name": "Substances which, in contact with water, emit flammable gases",
+            "description": "Dangerous When Wet - possibly spontaiously combustible when in contact with water, or creates combustible or toxic gas when in contact with water.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          }
+        ],
+        [
+          {
+            "IMOClass": 5,
+            "IMOSubClass": 5.1,
+            "name": "Oxidizing substances ",
+            "description": "Delivers Oxygen, can supply oxygen to a fire, increased firehazard.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 5,
+            "IMOSubClass": 5.2,
+            "name": "Organic peroxides",
+            "description": "Will burn rapidly, sensitive to friction and heat, contains more than 1 but less than 7 percent Hydrogen Peroxide.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          }
+        ],
+        [
+          {
+            "IMOClass": 6,
+            "IMOSubClass": 6.1,
+            "name": "Toxic or poisonous substances",
+            "description": "Toxic or poisonous substances, in any form.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          },
+          {
+            "IMOClass": 6,
+            "IMOSubClass": 6.2,
+            "name": "Infectious Substances",
+            "description": "Is or is suspected to be pathogenic - all medical and clinical waste, and infected animals are also included.",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          }
+        ],
+        [
+          {
+            "IMOClass": 7,
+            "IMOSubClass": 7,
+            "name": "Radioactive Materials",
+            "description": "All radioactive materials",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          }
+        ],
+        [
+          {
+            "IMOClass": 8,
+            "IMOSubClass": 8,
+            "name": "Corrosives",
+            "description": "All corrosive materials, acidic or basic. ",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          }
+        ],
+        [
+          {
+            "IMOClass": 9,
+            "IMOSubClass": 9,
+            "name": "Miscellaneous hazardous materials",
+            "description": "Any hazardous material which cannot be classified under classes 1 to 8 and their subclasses. ",
+            "iconImageEncoded": "base64-encoded-image-comes-here-OPTIONAL"
+          }
+        ]
+      ],
+      "fuelTypes": [
+        {
+          "shortname": "HFO",
+          "name": "Heavy Fuel Oil",
+          "description": "Heavy Fuel Oil, containing Sulphur between the stated percentages.",
+          "sulphurPercentageMax": 5,
+          "sulphurPercentageMin": 3.5,
+          "sulphurContentDenomination": "regular"
+        },
+        {
+          "shortname": "LFO",
+          "name": "Light Fuel Oil",
+          "description": "Light Fuel Oil, containing Sulphur between the stated percentages.",
+          "sulphurPercentageMax": 3.5,
+          "sulphurPercentageMin": 1,
+          "sulphurContentDenomination": "light"
+        },
+        {
+          "shortname": "MGO",
+          "name": "Marine Fuel Oil",
+          "description": "",
+          "sulphurPercentageMax": 0.01,
+          "sulphurPercentageMin": 0.01,
+          "sulphurContentDenomination": ""
+        },
+        {
+          "shortname": "MDO",
+          "name": "Marine Diesel Oil",
+          "description": "",
+          "sulphurPercentageMax": 0.01,
+          "sulphurPercentageMin": 0.01,
+          "sulphurContentDenomination": ""
+        },
+        {
+          "shortname": "LPG",
+          "name": "Liquid Petroleum Gas",
+          "description": "Liquid fuel grade petroleum.",
+          "sulphurPercentageMax": 0,
+          "sulphurPercentageMin": 0,
+          "sulphurContentDenomination": ""
+        },
+        {
+          "shortname": "LNG",
+          "name": "Liquified Natural Gas",
+          "description": "Methane gas in liquid form under high pressure.",
+          "sulphurPercentageMax": 0,
+          "sulphurPercentageMin": 0,
+          "sulphurContentDenomination": ""
+        }
+      ]
+    }
+  }
+}
