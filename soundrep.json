@@ -1,5 +1,5 @@
 {
-  "timestampUTC": "13:34:17-2018/01/24",
+  "timestampUTC": "10:41:25-2018/02/07",
   "version": "1.06",
   "report": {
     "SendReportEndpoints": [
@@ -24,17 +24,17 @@
       "vesselName": true,
       "vesselNumberOfPeopleOnBoard": true,
       "vesselEtaAtReportingArea": true,
-      "vesselExpectedCourseOverGroundEnteringArea": true,
-      "vesselAisType": true,
+      "vesselExpectedCourseOverGroundEnteringArea": false,
+      "vesselAisType": false,
       "vesselLength": false,
-      "vesselDeadWeightTonnage": true,
+      "vesselDeadWeightTonnage": false,
       "vesselCargoType": true,
       "vesselGrossTonnage": false,
-      "vesselTotalFuelTonnage": false,
+      "vesselTotalFuelTonnage": true,
       "vesselReportingRequirements": {
         "fuelName": true,
         "sulpherPercentage": false,
-        "sulphurContentDenomination": true,
+        "sulphurContentDenomination": false,
         "quantity": true
       },
       "vesselCargoInformation": [
@@ -72,14 +72,14 @@
               "South 71"
             ],
             "reservechannels": [
-              "UPDATE THIS"
+              "79"
             ]
           }
         },
         "areaWKT": "POLYGON((10.8544921875 56.00020483338158,10.634765625 55.78612990561606,10.639572143554688 55.59377045090436,10.8544921875 56.00020483338158)) - should probably be part of the service instance, but here a higher resolution of the actual VTS/SRS area can be defined.",
         "externalData": {
-          "iconImage": "img/vts_logos/forsvaret_logo.jpg",
-          "VTSGuideLink": "http://forsvaret.dk/VTSSTB/eng/Documents/BELTREP%20Information%20ver%200.pdf"
+          "iconImage": "http://www.sjofartsverket.se/upload/Sound%20VTS/SoundRep.png",
+          "VTSGuideLink": "http://www.sjofartsverket.se/en/Sound-VTS/"
         }
       },
       "reportingAreaLimitations": {
@@ -95,17 +95,15 @@
           }
         ],
         "notAllowedAisVesselTypes": [
-          71,
-          72,
-          80
+          ""
         ],
         "draughtMax": 20,
-        "airDraughtMax": 65,
-        "lengthMax": 420,
-        "speedMax": 12,
-        "speedMin": 3,
-        "grossTonnageMax": 10000,
-        "deadWeightTonnageMax": 2000
+        "airDraughtMax": "",
+        "lengthMax": "",
+        "speedMax": "",
+        "speedMin": "",
+        "grossTonnageMax": "",
+        "deadWeightTonnageMax": ""
       },
       "pilotRoutes": [
         {
@@ -134,24 +132,17 @@
               }
             ],
             "notAllowedAisVesselTypes": [
-              71,
-              72,
-              80
+              ""
             ],
             "notAllowedDangerousCargoTypes": [
-              1.1,
-              1.2,
-              1.3,
-              6.1,
-              6.2,
-              7
+              ""
             ],
             "vesselDraughtMax": 20,
-            "vesselAirDraughtMax": 65,
-            "vesselLengthMax": 420,
-            "vesselSpeedMax": 12,
-            "vesselGrossTonnageMax": 10000,
-            "vesselDeadWeightTonnageMax": 2000
+            "vesselAirDraughtMax": "",
+            "vesselLengthMax": "",
+            "vesselSpeedMax": "",
+            "vesselGrossTonnageMax": "",
+            "vesselDeadWeightTonnageMax": ""
           }
         }
       ]
@@ -411,7 +402,7 @@
         },
         {
           "shortname": "MGO",
-          "name": "Marine Fuel Oil",
+          "name": "Marine Gas Oil",
           "description": "",
           "sulphurPercentageMax": 0.01,
           "sulphurPercentageMin": 0.01,
