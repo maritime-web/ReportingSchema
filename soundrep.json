@@ -60,7 +60,7 @@
         "telephone": [
           "+46 771 63 06 00"
         ],
-        "fax": "",
+        "fax": null,
         "radio": {
           "UHF": {
             "channels": [],
@@ -95,15 +95,15 @@
           }
         ],
         "notAllowedAisVesselTypes": [
-          ""
+          null
         ],
         "draughtMax": 20,
-        "airDraughtMax": "",
-        "lengthMax": "",
-        "speedMax": "",
-        "speedMin": "",
-        "grossTonnageMax": "",
-        "deadWeightTonnageMax": ""
+        "airDraughtMax": null,
+        "lengthMax": null,
+        "speedMax": null,
+        "speedMin": null,
+        "grossTonnageMax": null,
+        "deadWeightTonnageMax": null
       },
       "pilotRoutes": [
         {
@@ -138,11 +138,11 @@
               ""
             ],
             "vesselDraughtMax": 20,
-            "vesselAirDraughtMax": "",
-            "vesselLengthMax": "",
-            "vesselSpeedMax": "",
-            "vesselGrossTonnageMax": "",
-            "vesselDeadWeightTonnageMax": ""
+            "vesselAirDraughtMax": null,
+            "vesselLengthMax": null,
+            "vesselSpeedMax": null,
+            "vesselGrossTonnageMax": null,
+            "vesselDeadWeightTonnageMax": null
           }
         }
       ]
