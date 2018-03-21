@@ -30,7 +30,8 @@
       "vesselDeadWeightTonnage": false,
       "vesselCargoType": true,
       "vesselGrossTonnage": false,
-      "vesselTotalFuelTonnage": true,
+      "vesselTotalFuelTonnage": false,
+      "vesselTotalFuelIfGrossTonnageMoreThan1000MetricTonnes": true,
       "vesselReportingRequirements": {
         "fuelName": true,
         "sulphurPercentage": false,
