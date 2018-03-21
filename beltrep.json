@@ -11,7 +11,7 @@
       },
       {
         "format": "XML",
-        "endpoint": "report@soundvts.org",
+        "endpoint": "vts@beltrep.org",
         "method": "EMAIL",
         "encoding": "UTF8"
       }
@@ -20,21 +20,23 @@
       "receiptEmail": true,
       "vesselMMSINumber": true,
       "vesselIMONumber": true,
-      "vesselCallsign": true,
+      "vesselCallSign": true,
       "vesselName": true,
       "vesselNumberOfPeopleOnBoard": true,
       "vesselEtaAtReportingArea": true,
+      "vesselReportingLineCrossed": true,
       "vesselExpectedCourseOverGroundEnteringArea": true,
-      "vesselAisType": true,
+      "vesselAisType": false,
       "vesselLength": false,
       "vesselDeadWeightTonnage": true,
       "vesselCargoType": true,
       "vesselGrossTonnage": false,
       "vesselTotalFuelTonnage": false,
+      "vesselTotalFuelIfGrossTonnageMoreThan1000MetricTonnes": true,
       "vesselReportingRequirements": {
         "fuelName": true,
-        "sulpherPercentage": false,
-        "sulphurContentDenomination": true,
+        "sulphurPercentage": false,
+        "sulphurContentDenomination": false,
         "quantity": true
       },
       "vesselCargoInformation": [
@@ -52,7 +54,7 @@
     },
     "reportingArea": {
       "reportingCenterInformation": {
-        "shortname": "BELTREP",
+        "shortName": "BELTREP",
         "name": "The Great Belt Vessel Traffic Service",
         "country": "Denmark",
         "callsign": "Great Belt Traffic",
@@ -68,11 +70,13 @@
           },
           "VHF": {
             "channels": [
-              "North 74",
-              "South 11"
+              {
+              "North": 74,
+              "South": 11
+              }
             ],
             "reservechannels": [
-              11
+              10
             ]
           }
         },
@@ -109,7 +113,7 @@
       },
       "pilotRoutes": [
         {
-          "routeName": "west-of-ven",
+          "routeName": "reporting-line-north",
           "RTZ": "RTZ comes here as an object - to display route in a UI",
           "routeLimitations": {
             "onlyFlagStateVesselsAllowed": false,
@@ -118,13 +122,749 @@
                 "shortname": "LFO",
                 "name": "Light Fuel Oil",
                 "sulphurDenomination": "",
-                "sulphurPercentageMax": 0.5
+                "sulphurPercentageMax": 0.1
               },
               {
                 "shortname": "HFO",
                 "name": "Heavy Fuel Oil",
                 "sulphurDenomination": "",
-                "sulphurPercentageMax": 0.5
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "reporting-line-west",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "reporting-line-south-west",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "reporting-line-south",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "route-hotel",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "route-tango",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "deep-water-tango-4",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "bridge-west",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "bridge-east",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "traffic-separation-scheme-tango-5",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "deep-water-tango-3",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "gulfhavn-stignaes-dkgfh-dkstn",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "svendborg-dksve",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "nyborg-dknbg",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "korsor-dkkrr",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "kalundborg-dkkal",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "Nuclear",
+                "name": "Nuclear Fission",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": ""
+              }
+            ],
+            "notAllowedAisVesselTypes": [
+              71,
+              72,
+              80
+            ],
+            "notAllowedDangerousCargoTypes": [
+              1.1,
+              1.2,
+              1.3,
+              6.1,
+              6.2,
+              7
+            ],
+            "vesselDraughtMax": 20,
+            "vesselAirDraughtMax": 65,
+            "vesselLengthMax": 420,
+            "vesselSpeedMax": 12,
+            "vesselGrossTonnageMax": 10000,
+            "vesselDeadWeightTonnageMax": 2000
+          }
+        },
+        {
+          "routeName": "kalundborg-fjord-kal-fj",
+          "RTZ": "RTZ comes here as an object - to display route in a UI",
+          "routeLimitations": {
+            "onlyFlagStateVesselsAllowed": false,
+            "notAllowedFuelTypes": [
+              {
+                "shortname": "LFO",
+                "name": "Light Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
+              },
+              {
+                "shortname": "HFO",
+                "name": "Heavy Fuel Oil",
+                "sulphurDenomination": "",
+                "sulphurPercentageMax": 0.1
               },
               {
                 "shortname": "Nuclear",
