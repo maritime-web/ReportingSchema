@@ -87,7 +87,7 @@
         }
       },
       "reportingAreaLimitations": {
-        "onlyFlagstateVesselsAllowed": false,
+        "onlyFlagStateVesselsAllowed": false,
         "notAllowedFuelTypes": [
           {
             "name": "HFO",
