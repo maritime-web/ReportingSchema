@@ -11,13 +11,13 @@
       },
       {
         "format": "XML",
-        "endpoint": "report@soundvts.org",
+        "endpoint": null,
         "method": "EMAIL",
         "encoding": "UTF8"
       }
     ],
     "reportingRequirements": {
-      "receiptEmail": true,
+      "receiptEmail": false,
       "vesselMMSINumber": true,
       "vesselIMONumber": true,
       "vesselCallSign": true,
@@ -25,16 +25,17 @@
       "vesselNumberOfPeopleOnBoard": true,
       "vesselEtaAtReportingArea": true,
       "vesselExpectedCourseOverGroundEnteringArea": true,
-      "vesselAisType": true,
+      "vesselAisType": false,
       "vesselLength": false,
-      "vesselDeadWeightTonnage": true,
+      "vesselDeadWeightTonnage": false,
       "vesselCargoType": true,
       "vesselGrossTonnage": false,
       "vesselTotalFuelTonnage": false,
+      "vesselTotalFuelIfMoreThan5000MetricTonnes": true,
       "vesselReportingRequirements": {
         "fuelName": true,
         "sulphurPercentage": false,
-        "sulphurContentDenomination": true,
+        "sulphurContentDenomination": false,
         "quantity": true
       },
       "vesselCargoInformation": [
@@ -45,10 +46,11 @@
         }
       ],
       "vesselDraught": true,
-      "vesselAirDraught": true,
-      "PollutionOrDangerousCargoLostOverboard": true,
+      "vesselAirDraught": false,
+      "PollutionOrDangerousCargoLostOverboard": false,
       "portOfDestination": true,
-      "intendedRoute": true
+      "portLastPortOfCall": true,
+      "intendedRoute": false
     },
     "reportingArea": {
       "reportingCenterInformation": {
