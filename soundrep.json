@@ -69,9 +69,11 @@
           },
           "VHF": {
             "channels": [
-              "North 73",
-              "South 71"
-            ],
+              {
+              "North": 73,
+              "South": 71
+              }
+              ],
             "reserveChannels": [
               "79"
             ]
