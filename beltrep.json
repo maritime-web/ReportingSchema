@@ -84,6 +84,7 @@
         "externalData": {
           "iconImage": "img/vts_logos/forsvaret_logo.jpg",
           "VTSGuideLink": "http://forsvaret.dk/VTSSTB/eng/Documents/BELTREP%20Information%20ver%200.pdf"
+          "VTSResolutionLink": "http://forsvaret.dk/VTSSTB/eng/Documents/Resolution.pdf"
         }
       },
       "reportingAreaLimitations": {
