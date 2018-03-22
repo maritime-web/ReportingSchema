@@ -77,10 +77,11 @@
             ]
           }
         },
-        "areaWKT": "POLYGON((10.8544921875 56.00020483338158,10.634765625 55.78612990561606,10.639572143554688 55.59377045090436,10.8544921875 56.00020483338158)) - should probably be part of the service instance, but here a higher resolution of the actual VTS/SRS area can be defined.",
+        "areaWKT": "POLYGON((GDANREP)) - should probably be part of the service instance, but here a higher resolution of the actual VTS/SRS area can be defined.",
         "externalData": {
-          "iconImage": "img/vts_logos/forsvaret_logo.jpg",
-          "VTSGuideLink": "http://forsvaret.dk/VTSSTB/eng/Documents/BELTREP%20Information%20ver%200.pdf"
+          "iconImage": null,
+          "VTSGuideLink": null,
+          "VTSResolutionLink": "https://www.navcen.uscg.gov/pdf/marcomms/imo/msc_resolutions/MSC249.pdf"
         }
       },
       "reportingAreaLimitations": {
