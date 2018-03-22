@@ -70,7 +70,7 @@
       "reportingCenterInformation": [
         {
         "shortName": "GOFREP",
-        "name": "Gulf of Finland Reporting",
+        "name": "In the Gulf of Finland",
         "country": "Finland",
         "callSign": "Helsinki Traffic",
         "email": "gofrep@fta.fi",
@@ -101,7 +101,7 @@
       },
         {
           "shortName": "GOFREP",
-          "name": "Gulf of Finland Reporting",
+          "name": "In the Gulf of Finland",
           "country": "Estonia",
           "callSign": "Tallinn Traffic",
           "email": "gofrep@vta.ee",
@@ -132,7 +132,7 @@
         },
         {
           "shortName": "GOFREP",
-          "name": "Gulf of Finland Reporting",
+          "name": "In the Gulf of Finland",
           "country": "Russia",
           "callSign": "St. Petersburg Traffic",
           "email": "gofrep@rsbm.ru",
