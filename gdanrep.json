@@ -20,7 +20,7 @@
       "receiptEmail": true,
       "vesselMMSINumber": true,
       "vesselIMONumber": true,
-      "vesselCallsign": true,
+      "vesselCallSign": true,
       "vesselName": true,
       "vesselNumberOfPeopleOnBoard": true,
       "vesselEtaAtReportingArea": true,
@@ -33,7 +33,7 @@
       "vesselTotalFuelTonnage": false,
       "vesselReportingRequirements": {
         "fuelName": true,
-        "sulpherPercentage": false,
+        "sulphurPercentage": false,
         "sulphurContentDenomination": true,
         "quantity": true
       },
@@ -52,13 +52,13 @@
     },
     "reportingArea": {
       "reportingCenterInformation": {
-        "shortname": "BELTREP",
-        "name": "The Great Belt Vessel Traffic Service",
-        "country": "Denmark",
-        "callsign": "Great Belt Traffic",
-        "email": "vts@beltrep.org",
+        "shortName": "GDANREP",
+        "name": "On the approaches to the polish ports of in the Gulf of Gdansk",
+        "country": "Poland",
+        "callSign": "VTS Zatoka",
+        "email": null,
         "telephone": [
-          "+45 58 37 68 68"
+          null
         ],
         "fax": "",
         "radio": {
@@ -68,11 +68,12 @@
           },
           "VHF": {
             "channels": [
-              "North 74",
-              "South 11"
-            ],
+              {
+              "Primary": 71
+              }
+              ],
             "reservechannels": [
-              11
+              66
             ]
           }
         },
