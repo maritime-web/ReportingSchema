@@ -113,25 +113,25 @@
       },
       "pilotRoutes": [
         {
-          "routeName": "west-of-ven",
+          "routeName": "gdanrep-route",
           "RTZ": "RTZ comes here as an object - to display route in a UI",
           "routeLimitations": {
             "onlyFlagStateVesselsAllowed": false,
             "notAllowedFuelTypes": [
               {
-                "shortname": "LFO",
+                "shortName": "LFO",
                 "name": "Light Fuel Oil",
                 "sulphurDenomination": "",
                 "sulphurPercentageMax": 0.5
               },
               {
-                "shortname": "HFO",
+                "shortName": "HFO",
                 "name": "Heavy Fuel Oil",
                 "sulphurDenomination": "",
                 "sulphurPercentageMax": 0.5
               },
               {
-                "shortname": "Nuclear",
+                "shortName": "Nuclear",
                 "name": "Nuclear Fission",
                 "sulphurDenomination": "",
                 "sulphurPercentageMax": ""
@@ -398,7 +398,7 @@
       ],
       "fuelTypes": [
         {
-          "shortname": "HFO",
+          "shortName": "HFO",
           "name": "Heavy Fuel Oil",
           "description": "Heavy Fuel Oil, containing Sulphur between the stated percentages.",
           "sulphurPercentageMax": 5,
@@ -406,7 +406,7 @@
           "sulphurContentDenomination": "regular"
         },
         {
-          "shortname": "LFO",
+          "shortName": "LFO",
           "name": "Light Fuel Oil",
           "description": "Light Fuel Oil, containing Sulphur between the stated percentages.",
           "sulphurPercentageMax": 3.5,
@@ -414,7 +414,7 @@
           "sulphurContentDenomination": "light"
         },
         {
-          "shortname": "MGO",
+          "shortName": "MGO",
           "name": "Marine Fuel Oil",
           "description": "",
           "sulphurPercentageMax": 0.01,
@@ -422,7 +422,7 @@
           "sulphurContentDenomination": ""
         },
         {
-          "shortname": "MDO",
+          "shortName": "MDO",
           "name": "Marine Diesel Oil",
           "description": "",
           "sulphurPercentageMax": 0.01,
@@ -430,7 +430,7 @@
           "sulphurContentDenomination": ""
         },
         {
-          "shortname": "LPG",
+          "shortName": "LPG",
           "name": "Liquid Petroleum Gas",
           "description": "Liquid fuel grade petroleum.",
           "sulphurPercentageMax": 0,
@@ -438,7 +438,7 @@
           "sulphurContentDenomination": ""
         },
         {
-          "shortname": "LNG",
+          "shortName": "LNG",
           "name": "Liquified Natural Gas",
           "description": "Methane gas in liquid form under high pressure.",
           "sulphurPercentageMax": 0,
