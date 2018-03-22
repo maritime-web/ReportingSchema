@@ -80,7 +80,8 @@
         "areaWKT": "POLYGON((10.8544921875 56.00020483338158,10.634765625 55.78612990561606,10.639572143554688 55.59377045090436,10.8544921875 56.00020483338158)) - should probably be part of the service instance, but here a higher resolution of the actual VTS/SRS area can be defined.",
         "externalData": {
           "iconImage": "http://www.sjofartsverket.se/upload/Sound%20VTS/SoundRep.png",
-          "VTSGuideLink": "http://www.sjofartsverket.se/en/Sound-VTS/"
+          "VTSGuideLink": "http://www.sjofartsverket.se/en/Sound-VTS/",
+          "VTSResolutionLink": "http://www.imo.org/blast/blastDataHelper.asp?data_id=30463&filename=314(88).pdf"
         }
       },
       "reportingAreaLimitations": {
